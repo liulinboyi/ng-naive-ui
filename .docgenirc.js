@@ -3,7 +3,7 @@
  */
 module.exports = {
     mode: 'full',
-    title: 'ALib',
+    title: 'naive',
     logoUrl: 'https://cdn.pingcode.com/open-sources/docgeni/logo.png',
     docsDir: 'docs',
     repoUrl: 'https://github.com/docgeni/docgeni-template',
@@ -13,7 +13,7 @@ module.exports = {
         {
             title: 'Components',
             path: 'components',
-            lib: 'alib',
+            lib: 'naive',
             locales: {
                 'zh-cn': {
                     title: '组件'
@@ -28,7 +28,7 @@ module.exports = {
     ],
     libs: [
         {
-            name: 'alib',
+            name: 'naive',
             rootDir: './src',
             include: [],
             exclude: '',

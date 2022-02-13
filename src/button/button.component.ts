@@ -4,10 +4,10 @@ import { Component, OnInit, HostBinding, Input, ElementRef } from '@angular/core
  * Button component
  */
 @Component({
-    selector: 'alib-button,[alibButton]',
+    selector: 'naive-button,[naiveButton]',
     template: '<ng-content></ng-content>'
 })
-export class AlibButtonComponent implements OnInit {
+export class naiveButtonComponent implements OnInit {
     @HostBinding(`class.dg-btn`) isBtn = true;
 
     private type: string;
@@ -15,7 +15,7 @@ export class AlibButtonComponent implements OnInit {
     /**
      * Alias for Button type, `'primary' | 'info' | 'success' | 'waring' | 'danger'`
      */
-    @Input() set alibButton(value: string) {
+    @Input() set naiveButton(value: string) {
         if (this.type) {
             this.elementRef.nativeElement.classList.remove(`dg-btn-${this.type}`);
         }
@@ -27,7 +27,7 @@ export class AlibButtonComponent implements OnInit {
      * Button type, `'primary' | 'info' | 'success' | 'waring' | 'danger'`
      * @type string
      */
-    @Input() alibType: 'primary' | 'info' | 'success' | 'waring' | 'danger' = 'primary';
+    @Input() naiveType: 'primary' | 'info' | 'success' | 'waring' | 'danger' = 'primary';
 
     constructor(private elementRef: ElementRef<HTMLElement>) {}
 

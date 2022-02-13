@@ -6,7 +6,7 @@ order: 20
 ## 安装
 
 ```bash
-ng add alib --save
+ng add naive --save
 ```
 
 <alert>需要全局安装`@angular/cli`。</alert>

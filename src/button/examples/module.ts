@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlibButtonBasicExampleComponent } from './basic/basic.component';
-import { AlibButtonModule } from '@docgeni/alib/button';
-const COMPONENTS = [AlibButtonBasicExampleComponent];
+import { naiveButtonBasicExampleComponent } from './basic/basic.component';
+import { naiveButtonModule } from '@docgeni/naive/button';
+const COMPONENTS = [naiveButtonBasicExampleComponent];
 
 @NgModule({
     declarations: COMPONENTS,
-    imports: [CommonModule, AlibButtonModule],
+    imports: [CommonModule, naiveButtonModule],
     exports: COMPONENTS,
     providers: []
 })
-export class AlibButtonExamplesModule {}
+export class naiveButtonExamplesModule {}

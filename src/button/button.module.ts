@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AlibButtonComponent } from './button.component';
+import { naiveButtonComponent } from './button.component';
 
 @NgModule({
-    declarations: [AlibButtonComponent],
+    declarations: [naiveButtonComponent],
     imports: [],
-    exports: [AlibButtonComponent]
+    exports: [naiveButtonComponent]
 })
-export class AlibButtonModule {}
+export class naiveButtonModule {}

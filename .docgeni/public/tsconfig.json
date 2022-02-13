@@ -19,7 +19,7 @@
       "node"
     ],
     "paths": {
-      "@docgeni/alib/*":["../../src/*"]
+      "@docgeni/naive/*":["../../src/*"]
     }
   },
   "files": [

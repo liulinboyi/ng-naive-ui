@@ -6,7 +6,7 @@ order: 20
 ## Installation
 
 ```bash
-ng add alib
+ng add naive
 ```
 
 <alert>You need to install `@angular/cli` globally.</alert>

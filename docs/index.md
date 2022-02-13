@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Alib
+  title: naive
   description: Fast and Power Angular UI Component
   actions:
     - text: Getting Started
@@ -34,7 +34,7 @@ features:
 ## Installation
 
 ```bash
-npm i alib --save
+npm i naive --save
 ```
 
 ## Use Docgeni Template

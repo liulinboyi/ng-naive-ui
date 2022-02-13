@@ -1,23 +1,23 @@
-# ALib
+# naive
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project alib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project alib`.
-> Note: Don't forget to add `--project alib` or else it will be added to the default project in your `angular.json` file. 
+Run `ng generate component component-name --project naive` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project naive`.
+> Note: Don't forget to add `--project naive` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build alib` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build naive` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build alib`, go to the dist folder `cd dist/alib` and run `npm publish`.
+After building your library with `ng build naive`, go to the dist folder `cd dist/naive` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test alib` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test naive` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 
