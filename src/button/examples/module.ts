@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { naiveButtonBasicExampleComponent } from './basic/basic.component';
-import { naiveButtonModule } from '@docgeni/naive/button';
+import { naiveButtonModule } from '@naive/naive/button';
 const COMPONENTS = [naiveButtonBasicExampleComponent];
 
 @NgModule({

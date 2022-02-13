@@ -10,6 +10,6 @@
         "@angular/platform-browser-dynamic": "~10.2.4",
         "rxjs": "~6.5.4",
         "zone.js": "~0.10.2",
-        "@docgeni/naive": "0.0.1"
+        "@naive/naive": "0.0.1"
     }
 }

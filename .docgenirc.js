@@ -1,12 +1,12 @@
 /**
- * @type {import('@docgeni/core').DocgeniConfig}
+ * @type {import('@naive/core').naiveConfig}
  */
 module.exports = {
     mode: 'full',
-    title: 'naive',
-    logoUrl: 'https://cdn.pingcode.com/open-sources/docgeni/logo.png',
+    title: 'Naive',
+    logoUrl: 'https://www.naiveui.com/assets/naivelogo.93278402.svg',
     docsDir: 'docs',
-    repoUrl: 'https://github.com/docgeni/docgeni-template',
+    repoUrl: 'https://github.com/liulinboyi/ng-naive-ui',
     footer: 'Open-source MIT Licensed | Copyright © 2020-present Powered by self',
     navs: [
         null,
@@ -22,7 +22,7 @@ module.exports = {
         },
         {
             title: 'GitHub',
-            path: 'https://github.com/docgeni/docgeni-template',
+            path: 'https://github.com/naive/naive-template',
             isExternal: true
         }
     ],

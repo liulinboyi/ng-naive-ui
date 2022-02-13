@@ -1,24 +1,24 @@
-# Docgeni Template
+# naive Template
 
-A template for Angular Lib & Docs use Docgeni.
+A template for Angular Lib & Docs use naive.
 
-[![docgeni](https://img.shields.io/badge/docs%20by-docgeni-348fe4)](https://github.com/docgeni/docgeni)
+[![naive](https://img.shields.io/badge/docs%20by-naive-348fe4)](https://github.com/naive/naive)
 
 ## How to use?
 
 Click the top right button "Use this template" of this repo.
 
-![Use Docgeni Template](https://cdn.pingcode.com/open-sources/docgeni/use-docgeni-template.png)
+![Use naive Template](https://cdn.pingcode.com/open-sources/naive/use-naive-template.png)
 
 ## Live Preview
 
-https://docgeni.github.io/docgeni-template
+https://naive.github.io/naive-template
 
 ## Commands
 - `npm run start`: start development for this lib, it is an alias for `npm run start:docs`
 - `npm run build`: build this angular component lib
 - `npm run test`: exec unit tests of component lib
-- `npm run build:docs`: build docs site to dist/docgeni-site
+- `npm run build:docs`: build docs site to dist/naive-site
 - `npm run lint`: lint component lib
 ## Directory Structure
 
@@ -79,5 +79,5 @@ Current Angular Version: `12.x`
 
 Angular|Branch|
 --|--
-11.x|[ng-11.x](https://github.com/docgeni/docgeni-template/tree/ng-11.x)
-12.x|[master](https://github.com/docgeni/docgeni-template/tree/master)
+11.x|[ng-11.x](https://github.com/naive/naive-template/tree/ng-11.x)
+12.x|[master](https://github.com/naive/naive-template/tree/master)

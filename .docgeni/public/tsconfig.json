@@ -19,7 +19,7 @@
       "node"
     ],
     "paths": {
-      "@docgeni/naive/*":["../../src/*"]
+      "@naive/naive/*":["../../src/*"]
     }
   },
   "files": [
