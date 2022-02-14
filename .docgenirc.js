@@ -3,10 +3,10 @@
  */
 module.exports = {
     mode: 'full',
-    title: 'Naive',
+    title: 'Ng-Naive',
     logoUrl: 'https://www.naiveui.com/assets/naivelogo.93278402.svg',
     docsDir: 'docs',
-    repoUrl: 'https://github.com/liulinboyi/ng-naive-ui',
+    // repoUrl: 'https://github.com/liulinboyi/ng-naive-ui',
     footer: 'Open-source MIT Licensed | Copyright © 2020-present Powered by self',
     navs: [
         null,
@@ -22,7 +22,7 @@ module.exports = {
         },
         {
             title: 'GitHub',
-            path: 'https://github.com/naive/naive-template',
+            path: 'https://github.com/liulinboyi/ng-naive-ui',
             isExternal: true
         }
     ],
@@ -43,10 +43,16 @@ module.exports = {
                         }
                     }
                 }
-            ]
+            ],
+            labels: {
+                new: { text: '新鲜出炉', color: '#73D897' },
+                deprecated: { text: '你有更好的选择', color: '#AAAAAA' },
+                experimental: { text: '实验中', color: '#F6C659' },
+                work: { text: '进行中', color: '#fcad44' }
+            }
         }
     ],
-    defaultLocale: 'en-us',
+    defaultLocale: 'zh-cn',
     locales: [
         {
             key: 'en-us',
@@ -56,5 +62,6 @@ module.exports = {
             key: 'zh-cn',
             name: '中文'
         }
-    ]
+    ],
+    siteProjectName: 'site'
 };

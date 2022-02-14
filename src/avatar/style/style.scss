@@ -1,0 +1,35 @@
+@import './mix.scss';
+
+.n-avatar {
+    @include avatorBase;
+    &.small {
+        --n-merged-size: var(--n-avatar-size-override, 28px);
+    }
+
+    &.medium {
+        --n-merged-size: var(--n-avatar-size-override, 34px);
+    }
+
+    &.large {
+        --n-merged-size: var(--n-avatar-size-override, 40px);
+    }
+
+    width: var(--n-merged-size);
+    height: var(--n-merged-size);
+    color: #fff;
+    font-size: var(--n-font-size);
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: var(--n-border);
+    border-radius: var(--n-border-radius);
+    --n-merged-color: var(--n-color);
+    background-color: var(--n-merged-color);
+    transition: border-color 0.3s var(--n-bezier), background-color 0.3s var(--n-bezier), color 0.3s var(--n-bezier);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}

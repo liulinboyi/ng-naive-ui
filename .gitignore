@@ -46,3 +46,7 @@ testem.log
 Thumbs.db
 
 .docgeni/site
+projects/site/src/app/content
+.angular
+projects/site/src/assets/content
+projects/site/src/assets/stack-blitz
