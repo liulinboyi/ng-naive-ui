@@ -1,8 +1,29 @@
 <p class="title">颜色</p>
 <p class="intro">你可以把它设成某种和你爱吃的东西有关的颜色。</p>
 <div>
-  <n-avatar round size="small" src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"></n-avatar>
-  <n-avatar round size="medium" src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"></n-avatar>
-  <n-avatar round size="large" src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"></n-avatar>
-  <n-avatar round [size]="48" src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"></n-avatar>
+  <n-avatar
+    [customStyle]="{
+      color: 'yellow',
+      backgroundColor: 'red'
+    }"
+  >
+    <ng-template nAvatarText> M </ng-template>
+  </n-avatar>
+  <n-avatar
+    [customStyle]="{
+      color: 'yellow',
+      backgroundColor: 'red'
+    }"
+  >
+    Q
+  </n-avatar>
+  <n-avatar
+    [customStyle]="{
+      color: 'yellow',
+      backgroundColor: 'red'
+    }"
+  >
+    <ng-template nAvatarText> M </ng-template>
+    Q
+  </n-avatar>
 </div>

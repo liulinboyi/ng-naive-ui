@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding, Input, ElementRef, SimpleChanges } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, ElementRef, SimpleChanges, ContentChild } from '@angular/core';
+import { naiveAvatarText } from './avatar-text.directive';
 
 /**
  * 头像组件
@@ -6,7 +7,10 @@ import { Component, OnInit, HostBinding, Input, ElementRef, SimpleChanges } from
 @Component({
     selector: 'n-avatar',
     templateUrl: './avatar.component.html',
-    styleUrls: ['./style/style.scss']
+    styleUrls: ['./style/style.scss'],
+    host: {
+        style: 'display: inline-flex'
+    }
 })
 export class naiveAvatarComponent implements OnInit {
     /** 头像是否带边框 */
@@ -26,6 +30,10 @@ export class naiveAvatarComponent implements OnInit {
     @Input() round: boolean | string = false;
     /** 头像的图片加载失败执行的回调 */
     @Input('on-error') onError: (e: Event) => void = undefined;
+    /** 自定义样式 */
+    @Input() customStyle: Object;
+
+    @ContentChild(naiveAvatarText) defaultContent;
 
     /** 变量类型是否为string */
     isString(value: string | number) {
@@ -40,7 +48,13 @@ export class naiveAvatarComponent implements OnInit {
     /** 私有变量，用来设置图片尺寸class */
     get _size() {
         // 将值返给ngClass使用
-        return { [this.size]: this.isString(this.size) };
+        return {
+            [this.size]: this.isString(this.size)
+        };
+    }
+
+    get textStyle() {
+        return `transform: translateX(-50%) translateY(-50%) scale(1);`;
     }
 
     /** 构建行内样式css变量 */
@@ -48,6 +62,11 @@ export class naiveAvatarComponent implements OnInit {
         const stack = [];
         this.isNumber(this.size) ? stack.push(`--n-merged-size:${this.size}px`) : '';
         this.round ? stack.push(`--n-border-radius: 50%`) : '';
+        if (this.customStyle) {
+            Object.keys(this.customStyle).forEach((key) => {
+                stack.push(`${key}: ${this.customStyle[key]}`);
+            });
+        }
         return stack.join(';');
     }
 
@@ -63,6 +82,16 @@ export class naiveAvatarComponent implements OnInit {
         this.round = this.round === '' ? true : false;
     }
 
+    constructor() {}
+
     /** 生命周期 */
     ngOnInit(): void {}
+
+    ngAfterContentInit() {
+        console.log(this.defaultContent);
+    }
+
+    ngAfterViewInit() {
+        // console.log(this.defaultContent)
+    }
 }

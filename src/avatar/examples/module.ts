@@ -4,11 +4,18 @@ import { naiveAvatarModule } from '@naive/naive/avatar';
 import { naiveAvatarSizeExampleComponent } from './size/size.component';
 import { naiveAvatarShapeExampleComponent } from './shape/shape.component';
 import { naiveAvatarColorExampleComponent } from './color/color.component';
-const COMPONENTS = [naiveAvatarSizeExampleComponent, naiveAvatarShapeExampleComponent, naiveAvatarColorExampleComponent];
+import { naiveAvatarChangeExampleComponent } from './change/change.component';
+import { FormsModule } from '@angular/forms';
+const COMPONENTS = [
+    naiveAvatarSizeExampleComponent,
+    naiveAvatarShapeExampleComponent,
+    naiveAvatarColorExampleComponent,
+    naiveAvatarChangeExampleComponent
+];
 
 @NgModule({
     declarations: COMPONENTS,
-    imports: [CommonModule, naiveAvatarModule],
+    imports: [CommonModule, naiveAvatarModule, FormsModule],
     exports: COMPONENTS,
     providers: []
 })
