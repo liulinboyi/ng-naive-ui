@@ -1,0 +1,9 @@
+@mixin avatorBase {
+    --n-font-size: 14px;
+    --n-border: none;
+    --n-border-radius: 3px;
+    --n-color: rgba(204, 204, 204, 1);
+    --n-color-modal: rgba(204, 204, 204, 1);
+    --n-color-popover: rgba(204, 204, 204, 1);
+    --n-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+}

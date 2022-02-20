@@ -1,7 +1,11 @@
 <p class="title">字号</p>
 <p class="intro">字号会根据内容文字自动调整。</p>
 <div>
-  <n-avatar>{{ value }}</n-avatar>
-  <n-avatar round>{{ value }}</n-avatar>
+  <n-avatar>
+    <span *nAvatarText="value">{{ value }}</span>
+  </n-avatar>
+  <n-avatar round>
+    <span *nAvatarText="value">{{ value }}</span>
+  </n-avatar>
   <input type="text" [(ngModel)]="value" />
 </div>

@@ -1,7 +1,9 @@
 {
   "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../dist/naive",
+  "deleteDestPath": true,
   "lib": {
-    "entryFile": "public-api.ts"
-  }
+    "entryFile": "./public_api.ts"
+  },
+  "allowedNonPeerDependencies": ["tslib", "angular"]
 }

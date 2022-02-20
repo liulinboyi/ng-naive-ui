@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { naiveAvatarModule } from '@naive/naive/avatar';
+import { naiveAvatarModule } from 'naive/avatar';
 import { naiveAvatarSizeExampleComponent } from './size/size.component';
 import { naiveAvatarShapeExampleComponent } from './shape/shape.component';
 import { naiveAvatarColorExampleComponent } from './color/color.component';

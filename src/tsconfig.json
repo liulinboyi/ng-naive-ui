@@ -1,17 +1,15 @@
+// Configuration for IDEs only.
+
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "../release",
-    // "alwaysStrict": true,
-    "declaration": true,
-    "inlineSources": true,
-    "declarationMap": true,
-    "lib": ["es2018", "dom"],
-    // "sourceMap": true,
-    // "strictFunctionTypes": true,
-    // "stripInternal": true,
-    "target": "es2015"
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "naive/*": ["./*"]
+    },
+    "alwaysStrict": true,
+    "strictFunctionTypes": true
   },
   "angularCompilerOptions": {
     // "strictInputAccessModifiers": true,
@@ -21,8 +19,12 @@
     // "fullTemplateTypeCheck": true,
     // "strictTemplates": true,
     // "strictInjectionParameters": true
+
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true
   },
   "include": [
-    "**/*.ts"
+    "./**/*.ts"
   ]
 }

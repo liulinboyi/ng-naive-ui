@@ -1,7 +1,7 @@
-<span class="n-avatar" [ngClass]="_size" [style]="_style">
+<span #self class="n-avatar" [ngClass]="_size" [style]="_style">
   <img *ngIf="src" [src]="src" alt="" />
-  <span class="n-avatar__text" [style]="textStyle">
-    <ng-container *ngIf="defaultContent?.templateRef" [ngTemplateOutlet]="defaultContent.templateRef"></ng-container>
+  <span #text class="n-avatar__text" [style]="textStyle">
+    <ng-container [ngTemplateOutlet]="defaultContent?.templateRef"></ng-container>
     <ng-content></ng-content>
   </span>
 </span>

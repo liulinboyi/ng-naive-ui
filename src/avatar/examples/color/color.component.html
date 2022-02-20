@@ -7,7 +7,9 @@
       backgroundColor: 'red'
     }"
   >
-    <ng-template nAvatarText> M </ng-template>
+    <!-- ng-template通过组件投影和指令获取会是一个注释节点 -->
+    <!-- <ng-template *nAvatarText> M </ng-template> -->
+    <span *nAvatarText> M </span>
   </n-avatar>
   <n-avatar
     [customStyle]="{
@@ -23,7 +25,7 @@
       backgroundColor: 'red'
     }"
   >
-    <ng-template nAvatarText> M </ng-template>
+    <span *nAvatarText> M </span>
     Q
   </n-avatar>
 </div>
