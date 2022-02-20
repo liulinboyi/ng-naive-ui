@@ -1,6 +1,7 @@
 <span #self class="n-avatar" [ngClass]="_size" [style]="_style">
   <img *ngIf="src" [src]="src" alt="" />
   <span #text class="n-avatar__text" [style]="textStyle">
+    <!-- 新版本Angular13中，内容投影如果是template则从投影中获取template是注释节点，无法使用ngTemplateOutlet渲染,暂时没有其他办法 -->
     <ng-container [ngTemplateOutlet]="defaultContent?.templateRef"></ng-container>
     <ng-content></ng-content>
   </span>
