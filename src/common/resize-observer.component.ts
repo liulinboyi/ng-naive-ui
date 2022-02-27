@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-
+import { Component, OnInit, Input, SimpleChanges, ViewContainerRef, ElementRef } from '@angular/core';
+import delegate from './delegate';
 export type VResizeObserverOnResize = (entry: ResizeObserverEntry) => void;
 
 /**
@@ -16,7 +16,7 @@ export type VResizeObserverOnResize = (entry: ResizeObserverEntry) => void;
 export class naiveResizeObserverComponent implements OnInit {
     @Input() onResize: VResizeObserverOnResize | undefined;
 
-    registered: false | undefined;
+    registered: boolean | undefined = false;
     handleResize(entry: ResizeObserverEntry) {
         const { onResize } = this;
         if (onResize !== undefined) onResize(entry);
@@ -25,7 +25,7 @@ export class naiveResizeObserverComponent implements OnInit {
     /** 生命周期 */
     ngOnChanges(_changes: SimpleChanges /* 暂时用不到，后续可能会用到这个参数 */) {}
 
-    constructor() {}
+    constructor(public el: ElementRef, public viewContainerRef: ViewContainerRef) {}
 
     /** 生命周期 */
     ngOnInit(): void {}
@@ -33,24 +33,26 @@ export class naiveResizeObserverComponent implements OnInit {
     ngAfterContentInit() {}
 
     ngAfterViewInit() {
-        console.log(this);
-        // const el = this.$el as Element | undefined
-        // if (el === undefined) {
-        //   warn('resize-observer', '$el does not exist.')
-        //   return
-        // }
-        // if (el.nextElementSibling !== el.nextSibling) {
-        //   if (el.nodeType === 3 && el.nodeValue !== '') {
-        //     warn(
-        //       'resize-observer',
-        //       '$el can not be observed (it may be a text node).'
-        //     )
-        //     return
-        //   }
-        // }
-        // if (el.nextElementSibling !== null) {
-        //   delegate.registerHandler(el.nextElementSibling, this.handleResize)
-        //   this.registered = true
-        // }
+        const el = this.el.nativeElement;
+        if (el === undefined) {
+            console.warn('resize-observer', '$el does not exist.');
+            return;
+        }
+        if (el.nextElementSibling !== el.nextSibling) {
+            if (el.nodeType === 3 && el.nodeValue !== '') {
+                console.warn('resize-observer', '$el can not be observed (it may be a text node).');
+                return;
+            }
+        }
+        if (el.nextElementSibling !== null) {
+            delegate.registerHandler(el.nextElementSibling, () => this.handleResize);
+            this.registered = true;
+        }
+    }
+
+    ngOnDestroy() {
+        if (this.registered) {
+            delegate.unregisterHandler(this.el.nativeElement.nextElementSibling);
+        }
     }
 }

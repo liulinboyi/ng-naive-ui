@@ -6,11 +6,13 @@ import { naiveAvatarShapeExampleComponent } from './shape/shape.component';
 import { naiveAvatarColorExampleComponent } from './color/color.component';
 import { naiveAvatarChangeExampleComponent } from './change/change.component';
 import { FormsModule } from '@angular/forms';
+import { naiveAvatarChangeObserverExampleComponent } from './change-observer/change-observer.component';
 const COMPONENTS = [
     naiveAvatarSizeExampleComponent,
     naiveAvatarShapeExampleComponent,
     naiveAvatarColorExampleComponent,
-    naiveAvatarChangeExampleComponent
+    naiveAvatarChangeExampleComponent,
+    naiveAvatarChangeObserverExampleComponent
 ];
 
 @NgModule({

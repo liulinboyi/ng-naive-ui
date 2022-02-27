@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ElementRef, SimpleChanges, ContentChild, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, SimpleChanges, ContentChild, ViewChild, ViewContainerRef } from '@angular/core';
+import { naiveResizeObserverComponent } from 'naive/common';
 import { naiveAvatarText } from './avatar-text.directive';
 
 /**
@@ -41,8 +42,12 @@ export class naiveAvatarComponent implements OnInit {
 
     @ViewChild('self') self!: ElementRef<any>;
 
-    fitTextTransform(): void {
+    @ViewChild(naiveResizeObserverComponent) naiveResizeObserverComponent;
+
+    fitTextTransform = (type?): void => {
         let memoedTextHtml: string | null = null;
+        if (!this.text) return;
+        // console.log(type);
         const { nativeElement: textEl } = this.text;
         if (textEl) {
             if (memoedTextHtml === null || memoedTextHtml !== textEl.innerHTML) {
@@ -57,7 +62,7 @@ export class naiveAvatarComponent implements OnInit {
                 }
             }
         }
-    }
+    };
 
     /** 变量类型是否为string */
     isString(value: string | number) {
@@ -106,7 +111,7 @@ export class naiveAvatarComponent implements OnInit {
         this.round = this.round === '' ? true : false;
     }
 
-    constructor() {}
+    constructor(public el: ElementRef, public viewContainerRef: ViewContainerRef) {}
 
     /** 生命周期 */
     ngOnInit(): void {}
@@ -116,13 +121,15 @@ export class naiveAvatarComponent implements OnInit {
         // console.log(this.defaultContent?.templateRef)
         if (this.defaultContent) {
             this.defaultContent.emit.subscribe((_value) => {
-                this.fitTextTransform();
+                this.fitTextTransform('directive');
             });
         }
     }
 
     ngAfterViewInit() {
-        this.fitTextTransform();
+        // console.log(this.naiveResizeObserverComponent);
+        if (!this.naiveResizeObserverComponent) return;
+        this.fitTextTransform('init');
         // console.log(this.defaultContent)
     }
 }
