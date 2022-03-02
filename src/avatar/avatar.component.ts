@@ -42,7 +42,9 @@ export class naiveAvatarComponent implements OnInit {
 
     @ViewChild('self') self!: ElementRef<any>;
 
-    @ViewChild(naiveResizeObserverComponent) naiveResizeObserverComponent;
+    @ViewChild('observer', { read: naiveResizeObserverComponent }) naiveResizeObserverComponent;
+
+    hasLoadErrorRef = false;
 
     fitTextTransform = (type?): void => {
         let memoedTextHtml: string | null = null;
@@ -61,6 +63,13 @@ export class naiveAvatarComponent implements OnInit {
                     textEl.style.transform = `translateX(-50%) translateY(-50%) scale(${ratio})`;
                 }
             }
+        }
+    };
+
+    handleError = (e: Event): void => {
+        this.hasLoadErrorRef = true;
+        if (this.onError) {
+            this.onError(e);
         }
     };
 
