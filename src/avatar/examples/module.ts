@@ -8,13 +8,15 @@ import { naiveAvatarChangeExampleComponent } from './change/change.component';
 import { FormsModule } from '@angular/forms';
 import { naiveAvatarChangeObserverExampleComponent } from './change-observer/change-observer.component';
 import { naiveAvatarErrorExampleComponent } from './error/error.component';
+import { naiveAvatarGroupExampleComponent } from './group/group.component';
 const COMPONENTS = [
     naiveAvatarSizeExampleComponent,
     naiveAvatarShapeExampleComponent,
     naiveAvatarColorExampleComponent,
     naiveAvatarChangeExampleComponent,
     naiveAvatarChangeObserverExampleComponent,
-    naiveAvatarErrorExampleComponent
+    naiveAvatarErrorExampleComponent,
+    naiveAvatarGroupExampleComponent
 ];
 
 @NgModule({

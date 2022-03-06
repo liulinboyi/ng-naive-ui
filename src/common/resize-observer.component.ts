@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, SimpleChanges, ViewContainerRef, ElementRef } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    SimpleChanges,
+    ViewContainerRef,
+    ElementRef,
+    ChangeDetectionStrategy,
+    ViewEncapsulation
+} from '@angular/core';
 import delegate from './delegate';
 export type VResizeObserverOnResize = (entry: ResizeObserverEntry) => void;
 
@@ -11,7 +20,10 @@ export type VResizeObserverOnResize = (entry: ResizeObserverEntry) => void;
     styleUrls: ['./style/style.scss'],
     host: {
         // style: 'display: inline-flex'
-    }
+    },
+    preserveWhitespaces: false,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class naiveResizeObserverComponent implements OnInit {
     @Input() onResize: VResizeObserverOnResize | undefined;

@@ -1,0 +1,6 @@
+<div class="n-avatar-group" [class.n-avatar-group--vertical]="vertical" role="group">
+  <n-avatar class="avatar" *ngFor="let item of _options" [src]="item.src" [size]="size" [round]="round"></n-avatar>
+  <n-avatar [customStyle]="maxStyle" class="avatar" *ngIf="rest !== undefined && rest.length > 0" [size]="size" [round]="round">
+    {{ '+' + rest.length }}
+  </n-avatar>
+</div>

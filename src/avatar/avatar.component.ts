@@ -1,4 +1,15 @@
-import { Component, OnInit, Input, ElementRef, SimpleChanges, ContentChild, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    ElementRef,
+    SimpleChanges,
+    ContentChild,
+    ViewChild,
+    ViewContainerRef,
+    ChangeDetectionStrategy,
+    ViewEncapsulation
+} from '@angular/core';
 import { naiveResizeObserverComponent } from 'naive/common';
 import { naiveAvatarText } from './avatar-text.directive';
 
@@ -11,7 +22,10 @@ import { naiveAvatarText } from './avatar-text.directive';
     styleUrls: ['./style/style.scss'],
     host: {
         style: 'display: inline-flex'
-    }
+    },
+    preserveWhitespaces: false,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class naiveAvatarComponent implements OnInit {
     /** 头像是否带边框 */
@@ -28,13 +42,22 @@ export class naiveAvatarComponent implements OnInit {
     @Input() src: string | undefined = undefined;
     /** 在Angular中，如果<n-avatar round></n-avatar>这么使用，Input，则在组件中取值为空字符串'' */
     /** 头像是否圆形 */
-    @Input() round: boolean | string = false;
+    @Input()
+    get round(): boolean | string {
+        return this._round;
+    }
+    set round(value) {
+        /** 在Angular中，如果<n-avatar round></n-avatar>这么使用，Input，则在组件中取值为空字符串'' */
+        this._round = value === '' || value ? true : false;
+    }
     /** 头像的图片加载失败执行的回调 */
     @Input('on-error') onError: (e: Event) => void;
     /** 自定义样式 */
     @Input() customStyle: {
         [index: string]: unknown;
     } = {};
+
+    private _round;
 
     @ContentChild(naiveAvatarText) defaultContent!: naiveAvatarText;
 
@@ -150,10 +173,7 @@ export class naiveAvatarComponent implements OnInit {
     }
 
     /** 生命周期 */
-    ngOnChanges(_changes: SimpleChanges /* 暂时用不到，后续可能会用到这个参数 */) {
-        /** 在Angular中，如果<n-avatar round></n-avatar>这么使用，Input，则在组件中取值为空字符串'' */
-        this.round = this.round === '' ? true : false;
-    }
+    ngOnChanges(_changes: SimpleChanges /* 暂时用不到，后续可能会用到这个参数 */) {}
 
     constructor(public el: ElementRef, public viewContainerRef: ViewContainerRef) {}
 

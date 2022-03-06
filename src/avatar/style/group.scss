@@ -1,0 +1,23 @@
+.n-avatar-group:not(.n-avatar-group--vertical) n-avatar {
+    &.avatar:not(:first-child) {
+        margin-left: -12px;
+    }
+}
+
+.n-avatar-group.n-avatar-group--vertical .avatar:not(:first-child) {
+    margin-top: -12px;
+}
+
+.n-avatar-group:not(.n-avatar-group--vertical) {
+    flex-direction: row;
+}
+
+.n-avatar-group.n-avatar-group--vertical {
+    flex-direction: column;
+}
+
+.n-avatar-group {
+    flex-wrap: nowrap;
+    display: inline-flex;
+    position: relative;
+}
