@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class naiveAvatarErrorExampleComponent {
     constructor() {}
+
+    /** 处理错误 */
+    onError(e) {
+        console.warn(e);
+    }
 }

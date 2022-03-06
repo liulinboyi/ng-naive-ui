@@ -21,7 +21,7 @@ export class naiveAvatarComponent implements OnInit {
     /** 头像加载失败时显示的图片的地址 */
     @Input('fallback-src') fallbackSrc = undefined;
     /** 头像的图片在容器内的的适应类型 */
-    @Input('object-fit') objectFit = 'fill';
+    @Input('object-fit') objectFit: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down' = 'fill';
     /** 头像的尺寸 */
     @Input() size: 'small' | 'medium' | 'large' | number = 'medium';
     /** 头像的地址 */
@@ -30,7 +30,7 @@ export class naiveAvatarComponent implements OnInit {
     /** 头像是否圆形 */
     @Input() round: boolean | string = false;
     /** 头像的图片加载失败执行的回调 */
-    @Input('on-error') onError: (e: Event) => void = () => {};
+    @Input('on-error') onError: (e: Event) => void;
     /** 自定义样式 */
     @Input() customStyle: {
         [index: string]: unknown;
@@ -46,7 +46,8 @@ export class naiveAvatarComponent implements OnInit {
 
     hasLoadErrorRef = false;
 
-    fitTextTransform = (type?): void => {
+    /** 计算文字变形样式 */
+    fitTextTransform = (_type): void => {
         let memoedTextHtml: string | null = null;
         if (!this.text) return;
         // console.log(type);
@@ -66,9 +67,11 @@ export class naiveAvatarComponent implements OnInit {
         }
     };
 
+    // 处理图片加载错误
     handleError = (e: Event): void => {
+        // 如果有错误，将hasLoadErrorRef置为true
         this.hasLoadErrorRef = true;
-        if (this.onError) {
+        if (this.onError /* 如果有传入错误处理函数，则执行 */) {
             this.onError(e);
         }
     };
@@ -91,21 +94,52 @@ export class naiveAvatarComponent implements OnInit {
         };
     }
 
+    /** 返回文本变形样式 */
     get textStyle() {
         return `transform: translateX(-50%) translateY(-50%) scale(1);`;
     }
 
     /** 构建行内样式css变量 */
     generateStyle() {
-        const stack = [];
-        this.isNumber(this.size) ? stack.push(`--n-merged-size:${this.size}px`) : '';
-        this.round ? stack.push(`--n-border-radius: 50%`) : '';
+        let fontSize = '14px';
+        let border = '2px solid #fff';
+        let borderRadius = '3px';
+        let propColor = this.color;
+        let color = 'rgba(204, 204, 204, 1)';
+        let colorModal = color;
+        let colorPopover = color;
+        let cubicBezierEaseInOut = 'cubic-bezier(0.4, 0, 0.2, 1)';
+        let height = this.size && this.isNumber(this.size) ? `${this.size}px` : '34px';
+        let str = {
+            '--n-font-size': fontSize,
+            '--n-border': this.bordered ? border : 'none',
+            '--n-border-radius': this.round ? '50%' : borderRadius,
+            '--n-color': propColor || color,
+            '--n-color-modal': propColor || colorModal,
+            '--n-color-popover': propColor || colorPopover,
+            '--n-bezier': cubicBezierEaseInOut,
+            '--n-merged-size': `var(--n-avatar-size-override, ${height})`
+        };
+
+        // 自定义颜色
         if (this.customStyle) {
             Object.keys(this.customStyle).forEach((key) => {
-                stack.push(`${key}: ${this.customStyle[key]}`);
+                // 将自定义颜色加入style对象
+                str[key] = `${this.customStyle[key]}`;
             });
         }
-        return stack.join(';');
+
+        return str;
+
+        // const stack = [];
+        // this.isNumber(this.size) ? stack.push(`--n-merged-size:${this.size}px`) : '';
+        // this.round ? stack.push(`--n-border-radius: 50%`) : '';
+        // if (this.customStyle) {
+        //     Object.keys(this.customStyle).forEach((key) => {
+        //         stack.push(`${key}: ${this.customStyle[key]}`);
+        //     });
+        // }
+        // return stack.join(';');
     }
 
     /** 私有变量，用来设置行内样式，因为返给ngStyle会报错，无法使用css变量，所以返给[style] */
