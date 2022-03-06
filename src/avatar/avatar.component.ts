@@ -104,7 +104,8 @@ export class naiveAvatarComponent implements OnInit {
         let fontSize = '14px';
         let border = '2px solid #fff';
         let borderRadius = '3px';
-        let propColor = this.color;
+        // 解构给新的变量名赋值
+        let { color: propColor } = this;
         let color = 'rgba(204, 204, 204, 1)';
         let colorModal = color;
         let colorPopover = color;

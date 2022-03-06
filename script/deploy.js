@@ -1,5 +1,6 @@
 const { input, pour } = require('./utils');
 const path = require('path');
+const fs = require('fs');
 
 async function exec(shell, args, opt) {
     console.log(`${shell} ${args.join(' ')}`);
@@ -14,7 +15,15 @@ void (async function () {
 
         //   console.log('请求的目录是: %s', path);
         let p = path.join(__dirname, '../dist/site');
+        let indexFilePath = path.join(p, './index.html');
         console.log(p);
+        let time = new Date().toLocaleString();
+        let file = fs.readFileSync(indexFilePath);
+        let bodyEndindex = /<\/body>/.exec(file).index;
+        let left = file.slice(0, bodyEndindex);
+        let right = file.slice(bodyEndindex);
+        let content = `${left}<script>console.log("构建时间：${time}")</script>${right}`;
+        fs.writeFileSync(indexFilePath, content);
         // await exec('cd', [p])
         await exec('cp', ['index.html', '404.html'], {
             cwd: p
