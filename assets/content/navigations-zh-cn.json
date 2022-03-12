@@ -1,0 +1,159 @@
+{
+  "navs": [
+    {
+      "id": "guides",
+      "path": "guides",
+      "channelPath": "guides",
+      "title": "文档",
+      "items": [
+        {
+          "id": "intro",
+          "path": "intro",
+          "channelPath": "guides",
+          "title": "介绍",
+          "order": 10,
+          "toc": "content",
+          "headings": [],
+          "contentPath": "docs/zh-cn/guides/intro.html",
+          "originPath": "docs/zh-cn/guides/intro.md"
+        },
+        {
+          "id": "getting-started",
+          "path": "getting-started",
+          "channelPath": "guides",
+          "title": "快速开始",
+          "order": 20,
+          "toc": "content",
+          "headings": [
+            {
+              "id": "安装",
+              "name": "安装",
+              "level": 2,
+              "type": "h2"
+            }
+          ],
+          "contentPath": "docs/zh-cn/guides/getting-started.html",
+          "originPath": "docs/zh-cn/guides/getting-started.md"
+        }
+      ],
+      "order": 9007199254740991
+    },
+    {
+      "title": "组件",
+      "path": "components",
+      "lib": "naive",
+      "items": [
+        {
+          "id": "general",
+          "title": "通用",
+          "items": [
+            {
+              "id": "avatar",
+              "title": "头像",
+              "subtitle": "Avatar",
+              "path": "avatar",
+              "importSpecifier": "naive/avatar",
+              "examples": [
+                "naive-avatar-change-example",
+                "naive-avatar-change-observer-example",
+                "naive-avatar-color-example",
+                "naive-avatar-error-example",
+                "naive-avatar-group-example",
+                "naive-avatar-shape-example",
+                "naive-avatar-size-example"
+              ],
+              "overview": true,
+              "api": true,
+              "order": 2,
+              "category": "general",
+              "originPath": "src/avatar/doc/zh-cn.md",
+              "toc": "content",
+              "channelPath": "components"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GitHub",
+      "path": "https://github.com/liulinboyi/ng-naive-ui",
+      "isExternal": true
+    }
+  ],
+  "docs": [
+    {
+      "id": "getting-started",
+      "path": "getting-started",
+      "channelPath": "guides",
+      "title": "快速开始",
+      "order": 20,
+      "toc": "content",
+      "headings": [
+        {
+          "id": "安装",
+          "name": "安装",
+          "level": 2,
+          "type": "h2"
+        }
+      ],
+      "contentPath": "docs/zh-cn/guides/getting-started.html",
+      "originPath": "docs/zh-cn/guides/getting-started.md"
+    },
+    {
+      "id": "intro",
+      "path": "intro",
+      "channelPath": "guides",
+      "title": "介绍",
+      "order": 10,
+      "toc": "content",
+      "headings": [],
+      "contentPath": "docs/zh-cn/guides/intro.html",
+      "originPath": "docs/zh-cn/guides/intro.md"
+    },
+    {
+      "id": "avatar",
+      "title": "头像",
+      "subtitle": "Avatar",
+      "path": "avatar",
+      "importSpecifier": "naive/avatar",
+      "examples": [
+        "naive-avatar-change-example",
+        "naive-avatar-change-observer-example",
+        "naive-avatar-color-example",
+        "naive-avatar-error-example",
+        "naive-avatar-group-example",
+        "naive-avatar-shape-example",
+        "naive-avatar-size-example"
+      ],
+      "overview": true,
+      "api": true,
+      "order": 2,
+      "category": "general",
+      "originPath": "src/avatar/doc/zh-cn.md",
+      "toc": "content",
+      "channelPath": "components"
+    }
+  ],
+  "homeMeta": {
+    "title": "首页",
+    "order": 10,
+    "hero": {
+      "title": "Ng-Naive",
+      "description": "Naive UI Angular版本",
+      "actions": [
+        {
+          "text": "快速上手",
+          "link": "/ng-naive-ui/guides/getting-started",
+          "btnShape": "round"
+        },
+        {
+          "text": "Design",
+          "link": "/ng-naive-ui/guides/intro",
+          "btnShape": "square",
+          "btnType": "outline-primary-light"
+        }
+      ]
+    },
+    "contentPath": "docs/zh-cn/index.html"
+  }
+}

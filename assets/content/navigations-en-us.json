@@ -1,0 +1,70 @@
+{
+  "navs": [
+    {
+      "title": "Components",
+      "path": "components",
+      "lib": "naive",
+      "items": [
+        {
+          "id": "general",
+          "title": "General",
+          "items": [
+            {
+              "id": "avatar",
+              "title": "Avatar",
+              "subtitle": "",
+              "path": "avatar",
+              "importSpecifier": "naive/avatar",
+              "examples": [
+                "naive-avatar-change-example",
+                "naive-avatar-change-observer-example",
+                "naive-avatar-color-example",
+                "naive-avatar-error-example",
+                "naive-avatar-group-example",
+                "naive-avatar-shape-example",
+                "naive-avatar-size-example"
+              ],
+              "overview": true,
+              "api": false,
+              "order": 2,
+              "category": "general",
+              "originPath": "src/avatar/doc/en-us.md",
+              "toc": "content",
+              "channelPath": "components"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GitHub",
+      "path": "https://github.com/liulinboyi/ng-naive-ui",
+      "isExternal": true
+    }
+  ],
+  "docs": [
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "subtitle": "",
+      "path": "avatar",
+      "importSpecifier": "naive/avatar",
+      "examples": [
+        "naive-avatar-change-example",
+        "naive-avatar-change-observer-example",
+        "naive-avatar-color-example",
+        "naive-avatar-error-example",
+        "naive-avatar-group-example",
+        "naive-avatar-shape-example",
+        "naive-avatar-size-example"
+      ],
+      "overview": true,
+      "api": false,
+      "order": 2,
+      "category": "general",
+      "originPath": "src/avatar/doc/en-us.md",
+      "toc": "content",
+      "channelPath": "components"
+    }
+  ]
+}
