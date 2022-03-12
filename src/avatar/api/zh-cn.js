@@ -11,6 +11,12 @@ module.exports = [
                 default: 'false'
             },
             {
+                name: 'customStyle',
+                description: '自定义样式',
+                type: 'Object',
+                default: undefined
+            },
+            {
                 name: 'color',
                 description: '头像的背景色',
                 type: 'string',

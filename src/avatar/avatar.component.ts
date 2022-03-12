@@ -145,7 +145,7 @@ export class naiveAvatarComponent implements OnInit {
             '--n-merged-size': `var(--n-avatar-size-override, ${height})`
         };
 
-        // 自定义颜色
+        // 自定义样式
         if (this.customStyle) {
             Object.keys(this.customStyle).forEach((key) => {
                 // 将自定义颜色加入style对象
